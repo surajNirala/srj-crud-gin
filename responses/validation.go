@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/jinzhu/gorm"
 	"github.com/srj-crud-gin/models"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 )
 
 // ValidateEmail checks if the email is valid.

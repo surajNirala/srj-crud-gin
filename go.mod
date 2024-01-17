@@ -4,7 +4,20 @@ go 1.21.5
 
 require github.com/jinzhu/gorm v1.9.16
 
-require github.com/jinzhu/now v1.1.5 // indirect
+require (
+	github.com/fsnotify/fsnotify v1.4.9 // indirect
+	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
+	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/nxadm/tail v1.4.8 // indirect
+	github.com/onsi/ginkgo v1.16.5 // indirect
+	github.com/onsi/gomega v1.30.0 // indirect
+	golang.org/x/tools v0.12.0 // indirect
+	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
+	gorm.io/driver/mysql v1.5.2 // indirect
+	gorm.io/gorm v1.25.2-0.20230530020048-26663ab9bf55 // indirect
+)
 
 require (
 	github.com/bytedance/sonic v1.10.2 // indirect
@@ -20,6 +33,7 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/joho/godotenv v1.5.1
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
