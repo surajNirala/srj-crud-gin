@@ -1,0 +1,11 @@
+# air.toml
+root = "."  # Root directory of your project
+build = "go build -o ./tmp/main ."
+run = "./tmp/main"
+include = [
+    "**/*.go"  # Include all Go files in the project
+]
+exclude = [
+    "**/tmp/*",  # Exclude temporary files or directories
+    "**/vendor/*"  # Exclude vendor directories
+]

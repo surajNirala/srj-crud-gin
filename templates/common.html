@@ -1,0 +1,6 @@
+{{ if .SuccessMessage }}
+    <div class="alert alert-success">{{ .SuccessMessage }}</div>
+{{ end }}
+{{ if .DangerMessage }}
+    <div class="alert alert-danger">{{ .DangerMessage }}</div>
+{{ end }}

@@ -19,3 +19,7 @@ func ResponseSuccess(code int, status string, message string, payload interface{
 		"data":    payload,
 	}
 }
+
+func Add(index int) int {
+	return index + 1
+}

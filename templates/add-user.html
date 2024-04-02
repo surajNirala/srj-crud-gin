@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>
+        {{ if .Title }}
+        {{ .Title }}
+        {{ else }}
+        SRJ-CRUD-GIN
+        {{ end }}
+    </title>
+</head>
+<body>
+
+<div class="container bg-body-tertiary mt-5">
+    <h2>{{ if .Title }}
+        {{ .Title }}
+        {{ else }}
+        SRJ-CRUD-GIN
+        {{ end }}</h2>
+   <p> <a href="/" class="btn btn-warning float-right">Back</a></p>
+   <br>
+    {{ if .Errors }}
+        <div class="alert alert-danger">
+            <p class="cancel_msg m-0"><strong>Opps Something went wrong</strong></p>
+            <div class="notification_msg d-flex justify-content-between">
+                <ul class="text-danger">
+                    {{ range .Errors }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    {{ end }}
+    <br>
+    <form action="/add-user-post" method="POST" enctype="multipart/form-data">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="first_name">First Name<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="first_name" id="first_name" aria-describedby="first_name" placeholder="Enter First Name">
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="last_name" id="last_name" aria-describedby="last_name" placeholder="Enter Last Name">
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="email">Email<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="phone" id="phone" aria-describedby="phone" placeholder="Enter Phone">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="age">Age<span class="text-danger">*</span></label>
+                <input type="number" class="form-control" name="age" id="age" aria-describedby="age" placeholder="Enter Age">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="file">File<span class="text-danger">*</span></label>
+                <input type="file" class="form-control" name="file" id="file" accept="image/*" aria-describedby="file">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+      </form>
+</div>
+
+</body>
+</html>

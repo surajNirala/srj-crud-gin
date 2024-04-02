@@ -4,6 +4,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/joho/godotenv"
@@ -23,8 +25,19 @@ func main() {
 	config.InitDB()
 	migration.DatabaseUp()
 	router := gin.Default()
+
+	// Initialize session middleware
+	// store := sessions.NewCookieStore([]byte("secret"))
+	// router.Use(sessions.Sessions("mysession", store))
+
+	// Initialize cookie-based session middleware
+	store := cookie.NewStore([]byte("secret")) // Replace "secret" with your own secret key
+	router.Use(sessions.Sessions("mysession", store))
+
+	// Handle requests to /uploaded/files/ by serving static files
+	router.Static("/uploaded/files/", "./uploaded/files/")
 	// Set the HTML templates folder
-	router.LoadHTMLGlob("templates/users/*")
+	router.LoadHTMLGlob("templates/*")
 	routes.WebRoutes(router)
 	routes.ApiRoutes(router)
 	// Start the Gin server
