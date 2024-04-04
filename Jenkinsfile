@@ -14,10 +14,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/dev'], [name: '*/staging'], [name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:surajNirala/srj-crud-gin.git']]])
             }
         }
-        
-        stage('Build Docker Image') {
-          steps { }
-        }
 
     }
 }
